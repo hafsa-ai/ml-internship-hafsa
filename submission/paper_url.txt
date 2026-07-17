@@ -1,1 +1,113 @@
-PASTE-YOUR-DEPLOYED-PAPER-URL-HERE
+📄 COMPLETE STRUCTURE OF A RESEARCH PAPER
+ 1. Title + Abstract
+Title:
+
+Identifying High-Opportunity Web Pages Using Search Performance Data
+
+Abstract:
+
+This study analyzes search performance data to identify underperforming web pages with high growth potential. We develop an opportunity scoring model using key metrics such as Click-Through Rate (CTR), impressions, and traffic trends. Our results show that pages with high impressions but low CTR represent the most valuable optimization opportunities. The proposed model outperforms simple ranking-based approaches by prioritizing actionable insights. Based on findings, we recommend targeted content updates, title optimization, and continuous monitoring to improve performance.
+
+📌 2. Problem
+
+Websites often contain hundreds or thousands of pages, but not all contribute equally to traffic or engagement.
+
+Key Question: Which pages should be updated to improve overall performance?
+
+Challenges:
+
+Limited time/resources for optimization
+Hard to identify high-impact pages
+Raw metrics don’t directly show opportunity
+📊 3. Data
+Dataset:
+
+FlyRank Internship Warehouse Dataset
+
+Tables Used:
+Search Performance Table (CTR, Clicks, Impressions)
+Page Metadata (URLs, titles)
+Time-series data (daily/weekly performance)
+Time Range:
+Example: Last 3–6 months of data (adjust based on your dataset)
+Data Cleaning:
+Removed rows with missing values (CTR, impressions)
+Filtered pages with very low impressions (< 50)
+Removed duplicate URLs
+Handled outliers (extremely high CTR values)
+⚙️ 4. Methodology
+Features Used:
+CTR (Click-Through Rate)
+Impressions
+Trend (growth/decline over time)
+Opportunity Score Formula:
+
+We define an opportunity score as:
+
+Opportunity Score = Impressions × (1 − CTR)
+
+Explanation:
+
+High impressions = high visibility
+Low CTR = underperformance
+Combined = strong optimization opportunity
+Classification Logic:
+High Opportunity: High impressions + Low CTR
+Low Opportunity: Low impressions or High CTR
+Growing Pages: Increasing impressions over time
+Declining Pages: Decreasing impressions
+Baseline Model:
+Rank pages by impressions only
+Validation Method:
+Compare top pages selected by:
+Baseline (Impressions)
+Proposed Model (Opportunity Score)
+Evaluate which method highlights more actionable pages
+📈 5. Results
+Key Findings:
+High-impression, low-CTR pages are the best optimization targets
+Opportunity Score identifies pages ignored by baseline
+Trend analysis helps detect declining content early
+Charts (You should include in your repo):
+📊 CTR vs Impressions Scatter Plot
+📉 Trend Line Graph (traffic over time)
+📌 Top 10 Opportunity Pages Bar Chart
+Comparison with Baseline:
+Method	Strength	Weakness
+Impressions Only	Simple	Misses low CTR issues
+Opportunity Score	Actionable	Slightly more complex
+
+👉 Conclusion: Opportunity Score provides better prioritization.
+
+⚠️ 6. Limitations
+❌ Not causal (only identifies patterns, not reasons)
+❌ Limited time window (short-term trends only)
+❌ No external factors considered (SEO changes, competition, seasonality)
+❌ CTR may vary due to ranking position not captured here
+🎯 7. Recommendations (VERY IMPORTANT)
+
+Based on analysis:
+
+✅ 1. Update Declining Pages
+Refresh outdated content
+Add new information or keywords
+✅ 2. Improve Titles & Meta Descriptions
+Focus on pages with high impressions but low CTR
+Make titles more engaging and relevant
+✅ 3. Optimize High-Opportunity Pages First
+Prioritize based on Opportunity Score
+Quick wins = maximum impact
+✅ 4. Monitor Growing Pages
+Support them with internal linking
+Expand content to capture more traffic
+✅ 5. Continuous Tracking
+Recalculate opportunity score weekly/monthly
+Track improvement after updates
+🔁 8. Reproducibility
+
+To reproduce this analysis:
+
+Clone the repository
+Install dependencies
+Load dataset from Hugging Face
+Run analysis notebook/script
